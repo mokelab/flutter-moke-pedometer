@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:moke_pedometer/pedometer_data.dart';
 
 import 'moke_pedometer_platform_interface.dart';
 
@@ -18,7 +19,8 @@ class MethodChannelMokePedometer extends MokePedometerPlatform {
   }
 
   @override
-  Future<Map<Object?, Object?>> queryToday() async {
-    return await methodChannel.invokeMethod("query", {});
+  Future<PedoMeterData> queryToday() async {
+    Map<Object?, Object?> data = await methodChannel.invokeMethod("query", {});
+    return PedoMeterData.parse(data);
   }
 }

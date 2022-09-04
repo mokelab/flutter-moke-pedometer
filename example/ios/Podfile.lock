@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - moke_pedometer (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - moke_pedometer (from `.symlinks/plugins/moke_pedometer/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  moke_pedometer:
+    :path: ".symlinks/plugins/moke_pedometer/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  moke_pedometer: 00f9ae7a974b5a00e70c6c66e98b56e9c3509a60
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.11.2

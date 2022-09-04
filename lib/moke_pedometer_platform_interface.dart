@@ -1,6 +1,7 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'moke_pedometer_method_channel.dart';
+import 'pedometer_data.dart';
 
 abstract class MokePedometerPlatform extends PlatformInterface {
   /// Constructs a MokePedometerPlatform.
@@ -27,7 +28,7 @@ abstract class MokePedometerPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<Map<Object?, Object?>> queryToday() async {
+  Future<PedoMeterData> queryToday() async {
     throw UnimplementedError('queryToday() has not been implemented.');
   }
 }

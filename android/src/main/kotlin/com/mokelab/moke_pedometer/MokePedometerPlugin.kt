@@ -29,9 +29,6 @@ class MokePedometerPlugin : FlutterPlugin, MethodCallHandler {
     override fun onMethodCall(call: MethodCall, result: Result) {
         println("onMethodCall ${call.method}")
         when (call.method) {
-            "getPlatformVersion" -> {
-                result.success("Android ${android.os.Build.VERSION.RELEASE}")
-            }
             "query" -> {
                 stepCounter.getStepCount(result)
             }

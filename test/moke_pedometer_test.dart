@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:moke_pedometer/moke_pedometer.dart';
 import 'package:moke_pedometer/moke_pedometer_platform_interface.dart';
 import 'package:moke_pedometer/moke_pedometer_method_channel.dart';
+import 'package:moke_pedometer/pedometer_data.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockMokePedometerPlatform
@@ -11,7 +12,7 @@ class MockMokePedometerPlatform
   Future<String?> getPlatformVersion() => Future.value('42');
 
   @override
-  Future<Map<Object?, Object?>> queryToday() => Future.value({});
+  Future<PedoMeterData> queryToday() => Future.value(PedoMeterData(0, 0, 0));
 }
 
 void main() {
