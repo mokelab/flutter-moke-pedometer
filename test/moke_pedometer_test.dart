@@ -4,12 +4,14 @@ import 'package:moke_pedometer/moke_pedometer_platform_interface.dart';
 import 'package:moke_pedometer/moke_pedometer_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockMokePedometerPlatform 
+class MockMokePedometerPlatform
     with MockPlatformInterfaceMixin
     implements MokePedometerPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<Map<Object?, Object?>> queryToday() => Future.value({});
 }
 
 void main() {
@@ -23,7 +25,7 @@ void main() {
     MokePedometer mokePedometerPlugin = MokePedometer();
     MockMokePedometerPlatform fakePlatform = MockMokePedometerPlatform();
     MokePedometerPlatform.instance = fakePlatform;
-  
+
     expect(await mokePedometerPlugin.getPlatformVersion(), '42');
   });
 }

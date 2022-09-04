@@ -23,6 +23,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     initPlatformState();
+    _queryPedometerData();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -31,8 +32,8 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      platformVersion =
-          await _mokePedometerPlugin.getPlatformVersion() ?? 'Unknown platform version';
+      platformVersion = await _mokePedometerPlugin.getPlatformVersion() ??
+          'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -45,6 +46,12 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _platformVersion = platformVersion;
     });
+  }
+
+  void _queryPedometerData() async {
+    print("queryPedometerData");
+    var data = await MokePedometer.queryToday();
+    print(data);
   }
 
   @override

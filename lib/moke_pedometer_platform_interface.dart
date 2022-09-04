@@ -14,7 +14,7 @@ abstract class MokePedometerPlatform extends PlatformInterface {
   ///
   /// Defaults to [MethodChannelMokePedometer].
   static MokePedometerPlatform get instance => _instance;
-  
+
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [MokePedometerPlatform] when
   /// they register themselves.
@@ -25,5 +25,9 @@ abstract class MokePedometerPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<Map<Object?, Object?>> queryToday() async {
+    throw UnimplementedError('queryToday() has not been implemented.');
   }
 }
